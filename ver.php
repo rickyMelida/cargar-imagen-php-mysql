@@ -24,10 +24,10 @@
                                 <img src="vista.php?id=6" class="d-block w-100 img-thumbnail" >
                             </div>
                             <div class="carousel-item">
-                                <img src="vista.php?id=5" class="d-block w-100 img-thumbnail" >
+                                <img src="vista.php?id=11" class="d-block w-100 img-thumbnail" >
                             </div>
                             <div class="carousel-item">
-                                <img src="vista.php?id=4" class="d-block w-100 img-thumbnail" >
+                                <img src="vista.php?id=13" class="d-block w-100 img-thumbnail" >
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
