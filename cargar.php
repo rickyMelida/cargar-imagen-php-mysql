@@ -1,6 +1,7 @@
 <?php
 if(isset($_POST["submit"])){
     $revisar = getimagesize($_FILES["image"]["tmp_name"]);
+    
     if($revisar !== false){
         $image = $_FILES['image']['tmp_name'];
         $imgContenido = addslashes(file_get_contents($image));
