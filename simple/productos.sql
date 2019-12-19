@@ -31,4 +31,4 @@ values ('AR03', 'DEPORTES', 'RAQUETA TENIS', 107, '22/10/2015',  'FALSO', 'PARAG
        
        select * from products
        
-       
+       INSERT INTO products(codigo, foto) values('AR11', '$nombre')
