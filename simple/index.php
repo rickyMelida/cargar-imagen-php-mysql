@@ -22,6 +22,11 @@
                     <input type="submit" value="Enviar Imagen">
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <a href="leer_imagen_bd.php">Ver imagenes</a>
+                </td>
+            </tr>
         </table>
     </form>
 </body>
