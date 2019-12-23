@@ -1,19 +1,37 @@
 <?php
-    $nombre = $_FILES['imagen']['name'];
-    $tipo = $_FILES['imagen']['type'];
-    $tama = $_FILES['imagen']['size'];
+    $antes_nombre = $_FILES['antes']['name'];
+    $antes_tipo = $_FILES['antes']['type'];
+    $antes_tama = $_FILES['antes']['size'];
+
+    $despues_nombre = $_FILES['despues']['name'];
+    $despues_tipo = $_FILES['despues']['type'];
+    $despues_tama = $_FILES['despues']['size'];
+
+    $texto = $_POST['texto'];
 
     //Ruta de la carpeta destino en servidor
-    $carpeta_destino = $_SERVER['DOCUMENT_ROOT'].'/cargar-imagen-php-mysql/simple/img/';
+    $carpeta_antes = $_SERVER['DOCUMENT_ROOT'].'/cargar-imagen/simple/antes/';
+    $carpeta_despues = $_SERVER['DOCUMENT_ROOT'].'/cargar-imagen/simple/despues/';
 
+    $n_antes = "antes";
+    $n_despues = "despues";
 
     //echo $tipo;
 
     //Limite de la imagen 1Mb
-    if($tama <= 1000000) {
-        if($tipo == 'image/jpeg' || $tipo == 'image/jpg' || $tipo == 'image/png' || $tipo == 'image/gif') {
+    if($antes_tama <= 1000000) {
+        if($despues_tipo == 'image/jpeg' || $despues_tipo == 'image/jpg' || $despues_tipo == 'image/png' || $despues_tipo == 'image/gif') {
 
-            $moved = move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino.$nombre);
+            $mover_antes = move_uploaded_file($_FILES['antes']['tmp_name'], $carpeta_antes.$antes_nombre);
+            $mover_despues = move_uploaded_file($_FILES['despues']['tmp_name'], $carpeta_despues.$despues_nombre);
+            
+            $tipo = substr($antes_tipo, 6, 10);
+            if($tipo == "jpeg") {
+                $tipo = "jpg";
+            }
+            rename("despues/".$despues_nombre, "despues/despues.".$tipo);
+
+
             echo "Se subio correctamente la imagen<br>";         
         }else {
             echo "Formato no valido<br>";
@@ -24,8 +42,8 @@
 
     echo "<a href='index.php'>Volver..<a>";
 
-
-    $con = mysqli_connect('localhost', 'root', '5181789781Ri-', 'productos');
+    /* ----- Conexion a base de datos ------------*/
+    $con = mysqli_connect('localhost', 'root', '', 'productos');
 
     if(mysqli_connect_errno()){
         echo "Error al conectar la base de datos";
@@ -35,7 +53,7 @@
 
     mysqli_set_charset($con, 'utf8');
 
-    $sql = "UPDATE products set foto='$nombre' where codigo='AR01'";
+    $sql = "INSERT into datos(texto, antes, despues) values('$texto', '$antes_nombre', '$despues_nombre')";
     //$sql = "INSERT INTO products(codigo, foto) values('AR12', '$nombre')";
     $resultado = mysqli_query($con, $sql); 
 

@@ -11,10 +11,27 @@
         <table>
             <tr>
                 <td>
-                    <label for="imagen">Imagen:</label>
+                    <label for="imagen">Antes:</label>
                 </td>
                 <td>
-                    <input type="file" name="imagen" size="20">
+                    <input type="file" name="antes" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="imagen">Despues:</label>
+                </td>
+                <td>
+                    <input type="file" name="despues" size="20">
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>
+                    <label for="imagen">Texto:</label>
+                </td>
+                <td>
+                    <input type="text" name="texto">
                 </td>
             </tr>
             <tr>

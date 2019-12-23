@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        $con = mysqli_connect('localhost', 'root', '5181789781Ri-', 'productos');
+        $con = mysqli_connect('localhost', 'root', '', 'productos');
 
         if(mysqli_connect_errno()){
             echo "Error al conectar la base de datos";
@@ -18,18 +18,18 @@
     
         mysqli_set_charset($con, 'utf8');
     
-        $sql = "SELECT foto from products where codigo='AR01'";
+        $sql = "SELECT antes from datos where id='1'";
 
         $res = mysqli_query($con, $sql);
 
         while($fila=mysqli_fetch_array($res)) {
-            $ruta_img = $fila['foto'];
+            $ruta_img = $fila['antes'];
         }
     
     ?>
 
     <div>
-        <img src="./img/<?php echo $ruta_img;?>" alt="Imagen del primer articulo " width="25%">
+        <img src="./antes/<?php echo $ruta_img;?>" alt="Imagen del primer articulo " width="25%">
     </div>
 </body>
 </html>

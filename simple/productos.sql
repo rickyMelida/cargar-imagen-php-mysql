@@ -12,11 +12,20 @@ create table products (
     foto varchar(10),
     
     primary key(codigo)
-    
 
 )
 
-alter table products modify foto foto varchar(50);
+create table datos(
+	id int auto_increment,
+    texto varchar(20), 
+    antes varchar(50),
+    despues varchar(50),
+    
+    primary key(id)
+
+)
+
+alter table products modify foto varchar(50);
 
 insert into products()
 values ('AR03', 'DEPORTES', 'RAQUETA TENIS', 107, '22/10/2015',  'FALSO', 'PARAGUAY', NULL),
@@ -29,6 +38,6 @@ values ('AR03', 'DEPORTES', 'RAQUETA TENIS', 107, '22/10/2015',  'FALSO', 'PARAG
        ('AR10', 'JUGUETERIA', 'PISTOLA CIN SONIDOS',13,'12/12/2019', 'VERDADERO', 'PARAGUAY', NULL);
        
        
-       select * from products
+       select * from datos
        
        INSERT INTO products(codigo, foto) values('AR11', '$nombre')
