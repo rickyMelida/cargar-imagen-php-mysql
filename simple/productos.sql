@@ -40,4 +40,9 @@ values ('AR03', 'DEPORTES', 'RAQUETA TENIS', 107, '22/10/2015',  'FALSO', 'PARAG
        
        select * from datos
        
+       truncate table datos
+       
+       //
+       select * from datos order by id desc limit 1;
+       
        INSERT INTO products(codigo, foto) values('AR11', '$nombre')

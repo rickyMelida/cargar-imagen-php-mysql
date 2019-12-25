@@ -29,8 +29,7 @@
             if($tipo == "jpeg") {
                 $tipo = "jpg";
             }
-            rename("despues/".$despues_nombre, "despues/despues.".$tipo);
-
+            //rename("despues/".$despues_nombre, "despues/despues.".$tipo);
 
             echo "Se subio correctamente la imagen<br>";         
         }else {
@@ -54,7 +53,6 @@
     mysqli_set_charset($con, 'utf8');
 
     $sql = "INSERT into datos(texto, antes, despues) values('$texto', '$antes_nombre', '$despues_nombre')";
-    //$sql = "INSERT INTO products(codigo, foto) values('AR12', '$nombre')";
     $resultado = mysqli_query($con, $sql); 
 
 
